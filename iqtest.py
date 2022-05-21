@@ -1,43 +1,23 @@
-def analysis_ques1(ques):
-    if ques == '1':
-        score += 1
-    
-def analysis_ques2(ques):
-    if ques == '2':
-        score += 1
+def iq_test(string):
+    #your code here
 
-def analysis_ques3(ques):
-    if ques == '3':
-        score += 1
+    numbers = string.split()
+    noOdds = 0
+    noEvens = 0
+    position = 0
 
-score = 0
-ques1 = input('Какое число не вписывается в этот ряд?\n1) 4\n2) 9\n3) 2\n')
-analysis_ques2(ques1)
-ques2 = input('Какой цвет не вписывается в этот ряд?\n1) Зеленый\n2) Желтый\n3) Синий\n')
-analysis_ques1(ques2)
-ques3 = input('Какая страна не вписывается в этот ряд?\n1) Бразилия\n2) Канада\n3) Мексика\n')
-analysis_ques1(ques3)
-ques4 = input('Какой город лишний?\n1) Варшава\n2) Париж\n3) Иерусалим\n')
-analysis_ques3(ques4)
-ques5 = input('Какое слово лишнее?\n1) Умный\n2) Смешной\n3) Спящий\n')
-analysis_ques3(ques5)
-ques6 = input('Какой металл не вписывается в этот ряд?\n1) Серебро\n2) Медь\n3) Золото\n')
-analysis_ques2(ques6)
-ques7 = input('Какая профессия не вписывается в этот ряд?\n1) Медсестра\n2) Костоправ\n3) Хирург\n')
-analysis_ques1(ques7)
-ques8 = input('Какая геометрическая фигура не вписывается в этот ряд?\n1) Квадрат\n2) Круг\n3) Треугольник\n')
-analysis_ques2(ques8)
-ques9 = input('Какое животное не вписывается в этот ряд?\n1) Кенгуру\n2) Коала\n3) Лев\n')
-analysis_ques3(ques9)
-ques10 = input('Выберите актера, который не вписывается в этот ряд?\n1) Крис Хемсворт\n2) Райан Гослинг\n3) Райан Рейнольдс\n')
-analysis_ques(ques10)
-ques11 = input('Кто из гениев не вписывается в этот ряд?\n1) Джон Нэш\n2) Альберт Энштейн\n3) Стивен Хокинг\n')
-analysis_ques1(ques11)
-ques12 = input('Какой писатель не вписывается в эту последовательность?\n1) Ф. Скотт Фицджеральд\n2) Владимир Набоков\n3) Эрнест Хемингуэй\n')
-analysis_ques1(ques12)
-ques13 = input('Какой продукт здесь лишний?\n1) Помидоры\n2) Черника\n3) Кале\n')
-analysis_ques1(ques13)
-ques14 = input('Какой фильм не вписывается в эту последовательность\n1) Титаник\n2) 500 дней лета\n3) Леон\n')
-analysis_ques1(ques14)
-ques15 = input('Выберите книгу, которая не вписывается в эту последовательность?\n1) Джейн Эйр\n2) Эмма\n3) Гордость и пробуждение\n')
-analysis_ques1(ques15)
+    for i in range (0, len(numbers)):
+        if(int(numbers[i]) % 2 == 0):
+            noEvens = noEvens + 1
+        else:
+            noOdds = noOdds + 1
+
+    if(noOdds > noEvens):
+        for i in range(0, len(numbers)):
+            if (int(numbers[i]) % 2 == 0):
+                position = i+1
+    else:
+        for i in range(0, len(numbers)):
+            if (int(numbers[i]) % 2 != 0):
+                position = i+1
+    return position
